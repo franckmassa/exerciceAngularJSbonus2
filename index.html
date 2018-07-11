@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <title>Exercice2</title>
+  </head>
+  <body ng-app='window'>
+    <!--Insertion du controller pour les variables scope et window-->
+    <div ng-controller="windowCtrl">
+      <button ng-click="sayHello(hello)">ALERTE</button>
+    </div>
+  <script>
+    var app = angular.module('window', [])
+    //Déclaration du controller pour lier les variables scope et window à la vue
+      app.controller('windowCtrl', function($scope, $window) {
+        $scope.sayHello = function(hello) {
+          $window.alert('Hello!');
+        };
+      });
+  </script>
+  </body>
+</html>
